@@ -8,10 +8,14 @@ from datetime import datetime
 from pathlib import Path
 import functions as fc
 import csv
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 username="USER YOU ARE LOOKING FOR"
-login_email="YOUR LOGIN EMAIL OR USERNAME"
-login_password="YOUR LOGIN PASSWORD"
+#You can either create a .env and save your login credentials there or you can just insret them here as a string
+login_email=os.getenv("INSTA_USERNAME") # INSERT your insta username
+login_password=os.getenv("INSTA_PASSWORD") # INSERT your insta password
 searching_for="followers"
 PATH_FRAGMENT="/"+username+"/"+searching_for+"/"
 driver = webdriver.Chrome() 
